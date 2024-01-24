@@ -1765,7 +1765,7 @@ void MainWindow::on_actionDownloadFromURL_triggered()
 #if defined(Q_OS_WIN) || defined(Q_OS_MACOS)
 void MainWindow::handleUpdateCheckFinished(ProgramUpdater *updater, const bool invokedByUser)
 {
-    m_ui->actionCheckForUpdates->setEnabled(true);
+    m_ui->actionCheckForUpdates->setEnabled(false);
     m_ui->actionCheckForUpdates->setText(tr("&Check for Updates"));
     m_ui->actionCheckForUpdates->setToolTip(tr("Check for program updates"));
 

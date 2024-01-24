@@ -3,14 +3,14 @@
 
 ; Uncomment if you want to use UPX to pack the installer header
 ; Doing so may make antivirus software flag the installer as virus/malware
-;!define USE_UPX
+!define USE_UPX
 
 ; Uncomment when packaging 64bit qbittorrent
-;!define QBT_IS_X64
+!define QBT_IS_X64
 
 ; Uncomment when packaging qt6 qbittorrent
 ; It will also define QBT_IS_X64
-;!define QBT_USES_QT6
+!define QBT_USES_QT6
 
 !ifdef QBT_USES_QT6
 !define /redef QBT_IS_X64
@@ -25,7 +25,7 @@
 ; 4.5.1.3 -> good
 ; 4.5.1.3.2 -> bad
 ; 4.5.0beta -> bad
-!define /ifndef QBT_VERSION "4.6.3.10"
+!define /ifndef QBT_VERSION "4.6.3.0"
 
 ; Option that controls the installer's window name
 ; If set, its value will be used like this:

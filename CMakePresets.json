@@ -1,0 +1,34 @@
+{
+    "version": 4,
+    "configurePresets": [
+        {
+            "name": "rel",
+            "hidden": true,
+            "displayName": "Release",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "toolchainFile": "$env{HOME}/repo/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "installDir": "${sourceDir}/out/install/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "QT6": true,
+                "STACKTRACE": false
+            }
+        },
+        {
+            "name": "win-rel",
+            "displayName": "Windows Release (Ninja)",
+            "inherits": "rel",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "MSVC_RUNTIME_DYNAMIC": true,
+                "VCPKG_TARGET_TRIPLET": "x64-windows-static-md-release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "win-rel",
+            "configurePreset": "win-rel"
+        }
+    ]
+}
