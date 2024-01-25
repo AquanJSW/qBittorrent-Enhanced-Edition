@@ -6,7 +6,6 @@
             "hidden": true,
             "displayName": "Release",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "toolchainFile": "$env{HOME}/repo/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "installDir": "${sourceDir}/out/install/${presetName}",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
@@ -15,9 +14,21 @@
             }
         },
         {
+            "name": "linux-rel",
+            "displayName": "Linux Release (Ninja)",
+            "inherits": "rel",
+            "toolchainFile": "$env{HOME}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_LIBRARIES": "-lexpat"
+            }
+        },
+        {
             "name": "win-rel",
             "displayName": "Windows Release (Ninja)",
             "inherits": "rel",
+            "toolchainFile": "$env{HOME}/repo/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "generator": "Ninja",
             "cacheVariables": {
                 "MSVC_RUNTIME_DYNAMIC": true,
@@ -29,6 +40,10 @@
         {
             "name": "win-rel",
             "configurePreset": "win-rel"
+        },
+        {
+            "name": "linux-rel",
+            "configurePreset": "linux-rel"
         }
     ]
 }
