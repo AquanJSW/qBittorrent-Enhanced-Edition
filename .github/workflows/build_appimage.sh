@@ -273,7 +273,7 @@ prepare_qt() {
   make -j$(nproc) install
 }
 
-preapare_libboost() {
+prepare_libboost() {
   # build latest boost
   boost_ver="$(retry curl -ksSfL --compressed https://www.boost.org/users/download/ \| grep "'>Version\s*'" \| sed -r "'s/.*Version\s*([^<]+).*/\1/'" \| head -1)"
   echo "boost version ${boost_ver}"
@@ -503,7 +503,7 @@ prepare_buildenv
 # compile openssl 3.x. But fedora doesn't work
 # prepare_ssl
 prepare_qt
-preapare_libboost
+prepare_libboost
 prepare_libtorrent
 build_qbee
 build_appimage

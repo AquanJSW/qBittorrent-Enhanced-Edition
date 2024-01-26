@@ -1,5 +1,6 @@
 .vscode
 out
+CMakeUserPresets.json
 
 src/gui/geoip/GeoIP.dat
 src/gui/geoip/GeoIP.dat.gz

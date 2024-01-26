@@ -14,6 +14,20 @@
             }
         },
         {
+            "name": "linux-rel-nox",
+            "displayName": "Linux Release NOX (Ninja)",
+            "inherits": "rel",
+            "toolchainFile": "$env{HOME}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "SYSTEMD": true,
+                "BUILD_SHARED_LIBS": false,
+                "GUI": false,
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_LIBRARIES": "-lexpat"
+            }
+        },
+        {
             "name": "linux-rel",
             "displayName": "Linux Release (Ninja)",
             "inherits": "rel",
@@ -43,6 +57,10 @@
         },
         {
             "name": "linux-rel",
+            "configurePreset": "linux-rel"
+        },
+        {
+            "name": "linux-rel-nox",
             "configurePreset": "linux-rel"
         }
     ]
